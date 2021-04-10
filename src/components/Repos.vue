@@ -11,7 +11,7 @@
           </thead>
           <tbody>
             <tr v-for="repo in repos" v-bind:key="repo.id">
-              <td><a v-bind:href="website"> {{ repo.full_name }}</a></td>
+              <td><a :href="`https://github.com/${repo.full_name}`"> {{ repo.full_name }}</a></td>
               <td><img class="avatar" :src= 'repo.owner.avatar_url'></td>
             </tr>
           </tbody>
@@ -28,8 +28,7 @@ export default {
   name: "Repos",
   data() {
       return {
-          repos: null,
-          website: 'https://github.com/Stiven-Ballshi?tab=repositories'
+          repos: null
       };
   },
   created: function() {

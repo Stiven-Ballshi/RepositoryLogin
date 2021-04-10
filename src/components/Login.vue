@@ -6,12 +6,12 @@
       </div>
       <i class="fab fa-github"></i>
     </div>
-        <form>
+        <form :action="`/#/Repos/${username}`">
           <div class="form-input">
           <h2>Github Stats</h2>
-            <input v-model="username" type="text" placeholder="Insert Username..." />
+            <input v-model="username" type="text" placeholder="Insert Username..." required/>
           </div>
-          <router-link :to="`/Repos/${this.username}`"><button>Get Started</button></router-link>
+          <button>Get Started</button>
         </form>
   </div>
 </template>
@@ -25,7 +25,7 @@ export default {
       return {
         username: ""
       }
-    }
+    },
 }
 
 </script>
